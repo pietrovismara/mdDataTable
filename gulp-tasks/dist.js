@@ -15,16 +15,16 @@ gulp.task('dist', function() {
         .pipe(ngAnnotate({ remove: false, add: true, single_quotes: true }))
         .pipe(gulp.dest('dist'));
 
-    var cssStream = gulp
-        .src('app/scss/main.scss')
-        .pipe(compass({ css: 'dist', sass: 'app/scss', image: 'app/img' }))
-        .pipe(rename('md-data-table-style.css'))
-        .pipe(gulp.dest('dist'));
+    // var cssStream = gulp
+    //     .src('app/scss/main.scss')
+    //     .pipe(compass({ css: 'dist', sass: 'app/scss', image: 'app/img' }))
+    //     .pipe(rename('md-data-table-style.css'))
+    //     .pipe(gulp.dest('dist'));
 
     var templatesStream = gulp
         .src(htmlFiles)
         .pipe(templateCache('md-data-table-templates.js', { root:'/', module:'mdtTemplates', standalone:true }))
         .pipe(gulp.dest('dist'));
 
-    return eventStream.merge([jsStream, templatesStream, cssStream]);
+    return eventStream.merge([jsStream, templatesStream]);
 });

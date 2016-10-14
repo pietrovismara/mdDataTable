@@ -48,7 +48,9 @@
                 alignRule: '@',
                 sortBy: '=',
                 columnDefinition: '@',
-                columnFilter: '=?'
+                columnFilter: '=?',
+                customClickHandler: '=',
+                customClickParams: '='
             },
             require: ['^mdtTable'],
             link: function ($scope, element, attrs, ctrl, transclude) {
@@ -61,7 +63,9 @@
                         alignRule: $scope.alignRule,
                         sortBy: $scope.sortBy,
                         columnDefinition: $scope.columnDefinition,
-                        columnName: cellValue
+                        columnName: cellValue,
+                        customClickHandler: $scope.customClickHandler,
+                        customClickParams: $scope.customClickParams
                     };
 
                     ColumnFilterFeature.appendHeaderCellData($scope, cellDataToStore, mdtTableCtrl.dataStorage, element);

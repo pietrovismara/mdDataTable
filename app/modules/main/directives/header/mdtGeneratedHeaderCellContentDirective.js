@@ -11,9 +11,17 @@
             link: function($scope, element, attrs, ctrl){
                 ColumnFilterFeature.initGeneratedHeaderCellContent($scope, $scope.headerRowData, ctrl);
 
-                $scope.columnClickHandler = function(){
-                    ColumnFilterFeature.generatedHeaderCellClickHandler($scope, $scope.headerRowData, element);
-                };
+                if ($scope.headerRowData.customClickHandler) {
+                    $scope.columnClickHandler = function($event) {
+                        let params = $scope.headerRowData.customClickParams.slice();
+                        params.unshift($event);
+                        $scope.headerRowData.customClickHandler.apply(null, params);
+                    }
+                } else {
+                    $scope.columnClickHandler = function(){
+                        ColumnFilterFeature.generatedHeaderCellClickHandler($scope, $scope.headerRowData, element);
+                    };
+                }
             }
         };
     }

@@ -26,7 +26,7 @@
 
         <span ng-show="headerRowData.alignRule == 'right'" ng-include src="'/main/templates/cells/generateSortingIcons.html'"></span>
 
-        <span ng-include src="'/main/templates/cells/generateCellValue.html'" ng-click="columnClickHandler()"></span>
+        <span ng-include src="'/main/templates/cells/generateCellValue.html'" ng-click="columnClickHandler($event)"></span>
 
         <span ng-show="headerRowData.alignRule == 'left'" ng-include src="'/main/templates/cells/generateSortingIcons.html'"></span>
     </div>

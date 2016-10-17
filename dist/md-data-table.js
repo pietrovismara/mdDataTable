@@ -96,9 +96,9 @@
                 $scope.editSelectedRow = editSelectedRow;
                 $scope.getNumberOfSelectedRows = _.bind(ctrl.dataStorage.getNumberOfSelectedRows, ctrl.dataStorage);
 
-                function editSelectedRow() {
+                function editSelectedRow($event) {
                     var rows = ctrl.dataStorage.getSelectedRows();
-                    $scope.editRowCallback(rows[0]);
+                    $scope.editRowCallback($event, rows[0]);
                 }
 
                 function deleteSelectedRows(){

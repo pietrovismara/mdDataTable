@@ -98,7 +98,6 @@
 
                 function editSelectedRow() {
                     var rows = ctrl.dataStorage.getSelectedRows();
-                    console.log($scope.editRowCallback, rows);
                     $scope.editRowCallback(rows[0]);
                 }
 
@@ -239,7 +238,7 @@
                 alternateHeaders: '=',
                 sortableColumns: '=',
                 deleteRowCallback: '&',
-                editRowCallback: '&',
+                editRowCallback: '=',
                 selectedRowCallback: '&',
                 saveRowCallback: '&',
                 animateSortIcon: '=',

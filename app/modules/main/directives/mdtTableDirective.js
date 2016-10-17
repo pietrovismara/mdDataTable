@@ -120,7 +120,7 @@
                 alternateHeaders: '=',
                 sortableColumns: '=',
                 deleteRowCallback: '&',
-                editRowCallback: '&',
+                editRowCallback: '=',
                 selectedRowCallback: '&',
                 saveRowCallback: '&',
                 animateSortIcon: '=',

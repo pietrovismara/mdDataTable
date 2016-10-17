@@ -98,7 +98,7 @@
 
                 function editSelectedRow() {
                     var rows = ctrl.dataStorage.getSelectedRows();
-                    console.log(ctrl.dataStorage, rows);
+                    console.log($scope.editRowCallback, rows);
                     $scope.editRowCallback(rows[0]);
                 }
 

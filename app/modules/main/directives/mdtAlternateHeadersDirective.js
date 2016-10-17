@@ -11,12 +11,13 @@
             require: '^mdtTable',
             link: function($scope, element, attrs, ctrl){
                 $scope.deleteSelectedRows = deleteSelectedRows;
+                $scope.editSelectedRow = editSelectedRow;
                 $scope.getNumberOfSelectedRows = _.bind(ctrl.dataStorage.getNumberOfSelectedRows, ctrl.dataStorage);
 
                 function editSelectedRow() {
-                    var row = ctrl.dataStorage.getRowData(0);
-                    console.log(ctrl.dataStorage, row);
-                    $scope.editRowCallback(row);
+                    var rows = ctrl.dataStorage.getSelectedRows();
+                    console.log(ctrl.dataStorage, rows);
+                    $scope.editRowCallback(rows[0]);
                 }
 
                 function deleteSelectedRows(){
